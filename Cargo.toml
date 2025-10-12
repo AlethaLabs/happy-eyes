@@ -1,0 +1,13 @@
+[package]
+name = "happy_eyes"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+futures = "0.3"
+quinn = "0.11"
+rustls-pki-types = "1.0"
+tokio = { version = "1.47", features = ["full"] }
+tokio-rustls = "0.26"
+webpki-roots = "1.0"
+hickory-resolver = { version = "0.25.2", features = ["tokio"] }
