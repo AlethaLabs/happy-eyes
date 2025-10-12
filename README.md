@@ -8,12 +8,26 @@ Happy Eyes implements the Happy Eyeballs v2 algorithm as specified in [RFC 8305]
 
 ## Features
 
-- **RFC 8305 Compliant**: Full implementation of Happy Eyeballs v2 specification
 - **Concurrent DNS Resolution**: Simultaneous AAAA and A record queries
 - **Resolution Delay**: 50ms IPv6 preference delay when A records arrive first
 - **Efficient Timing**: Uses u32 for network timing measurements (49-day range)
 - **Connection Racing**: Staggered connection attempts with proper timing
 - **IPv6 Preference**: Maintains IPv6 priority while providing IPv4 fallback
+
+## If you would like to test:
+```bash
+git clone https://github.com/AlethaLabs/happy-eyes
+cd happy-eyes
+cargo run
+```
+The application will test connections to several well-known hosts and display timing metrics.
+
+## Blog Post
+If you are interested in learning more about the code in detail please visit my blog:
+[AlethaLabs Blog](https://alethalabs.com/2025/10/12/racing-ip-for-happy-eyeballs/)
+
+## Why did I make this
+This is purely a learning project for me, I learned a ton about asynchronous programming in rust, and I am happy with the output. This isn't a full implementation of RFC 8305, but instead implements the core neccesities of racing IPs for connection. If you have any thoughts or see any errors I have made, please reach out! 
 
 ## How It Works
 
@@ -22,19 +36,8 @@ Happy Eyes implements the Happy Eyeballs v2 algorithm as specified in [RFC 8305]
 3. **Address Sorting**: Applies RFC 6724 destination address selection
 4. **Connection Racing**: Attempts connections with staggered timing delays
 
-## Usage
-
-```bash
-cargo run
-```
-
-The application will test connections to several well-known hosts and display timing metrics.
-
 ## Dependencies
-
-- `tokio` - Async runtime
-- `hickory-resolver` - DNS resolution
-- `quinn` - QUIC support (optional)
+See [Cargo.toml](Cargo.toml)
 
 ## License
 
