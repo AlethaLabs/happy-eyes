@@ -10,7 +10,6 @@ Happy Eyes implements the Happy Eyeballs v2 algorithm as specified in [RFC 8305]
 
 - **Concurrent DNS Resolution**: Simultaneous AAAA and A record queries
 - **Resolution Delay**: 50ms IPv6 preference delay when A records arrive first
-- **Efficient Timing**: Uses u32 for network timing measurements (49-day range)
 - **Connection Racing**: Staggered connection attempts with proper timing
 - **IPv6 Preference**: Maintains IPv6 priority while providing IPv4 fallback
 
